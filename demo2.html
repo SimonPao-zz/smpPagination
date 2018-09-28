@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>smpPagination demo</title>
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="googlebot" content="noindex, nofollow">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+    <script type="text/javascript" src="smpPagination.js"></script>
+
+    <link rel="stylesheet" href="smpPagination.css">
+
+    <style>
+        body {
+            max-width: 900px ;
+            margin: 10px auto ;
+            font-family: sans-serif ;
+        }
+
+        #pagination-block li {
+            border:1px solid black ;
+            margin: 10px 0 ;
+            padding: 10px ;
+            list-style: none;
+        }
+    </style>
+</head>
+<body>
+
+<ul id="pagination-block">
+  <li>Bacon ipsum dolor</li>
+  <li>amet ham deserunt</li>
+  <li>spare ribs officia</li>
+  <li>ut chuck pork meatloaf</li>
+  <li>ea ball tip laborum</li>
+  <li>Lorem sed pork belly</li>
+  <li>tri-tip eiusmod eu dolor</li>
+  <li>in irure beef ribs</li>
+  <li>Eiusmod ball tip</li>
+  <li>sint doner aliqua</li>
+  <li>ham hock, andouille biltong</li>
+  <li>fugiat nostrud in</li>
+  <li>ancetta short loin</li>
+  <li>occaecat non</li>
+  <li>Bacon ipsum dolor</li>
+  <li>amet ham deserunt</li>
+  <li>spare ribs officia</li>
+  <li>ut chuck pork meatloaf</li>
+  <li>ea ball tip laborum</li>
+  <li>Lorem sed pork belly</li>
+  <li>tri-tip eiusmod eu dolor</li>
+  <li>in irure beef ribs</li>
+  <li>Eiusmod ball tip</li>
+  <li>sint doner aliqua</li>
+  <li>ham hock, andouille biltong</li>
+  <li>fugiat nostrud in</li>
+  <li>ancetta short loin</li>
+  <li>occaecat non</li>
+</ul>
+
+<br/>
+<label for="inp_rows">Number of Rows</label>
+<input id="inp_rows" type="number" value="6"/>
+<button id="btn_render">Change</button>
+
+<script type="text/javascript">
+    let $inp_rows = $('#inp_rows') ;
+    let params = window.location.search.substring(1).split('&') ;
+    for(let key in params) {
+        let tmp = params[key].split('=') ;
+        params[tmp[0]] = tmp[1] ;
+    }
+    const perPage = params.rows ? parseInt(params.rows) : 6 ;
+    $inp_rows.val(perPage) ;
+
+    $("#pagination-block li").smpPagination(perPage) ;
+
+    $('#btn_render').click(function(){
+        let rows = !!$inp_rows.val() ? $inp_rows.val() : 6 ;
+        window.location.search = '?rows=' + rows ;
+    }) ;
+</script>
+
+</body>
+</html>
