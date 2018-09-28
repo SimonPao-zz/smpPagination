@@ -1,0 +1,41 @@
+.smpPagination--pagination-nav {
+    text-align:center;
+}
+
+.smpPagination--pagination {
+    white-space: normal ;
+    background-color: #0E9C57 ;
+    border:1px solid #0E9C57 ;
+    color: white ;
+    font-weight: bold;
+    padding: 5px 7px;
+    margin-top:10px;
+    cursor: pointer;
+}
+
+.smpPagination--pagination:hover {
+    background-color: white ;
+    color: #0E9C57 ;
+}
+
+.smpPagination--pagination.disable {
+    background-color: lightgrey ;
+    border-color: darkgray;
+    color: darkgray ;
+    cursor: not-allowed;
+}
+
+.smpPagination--pagination.next {
+    float:right;
+}
+
+.smpPagination--pagination.prev {
+    float:left;
+}
+
+.smpPagination--pagination-counter {
+    padding: 5px 7px;
+    margin-top:10px;
+    display:inline-block;
+    font-weight: bold;
+}
