@@ -2,7 +2,7 @@
     $.fn.smpPagination = function(perPage) {
 
         // No need to pagination if number of items does not exceed perPage
-        if($(this.length > perPage)) {
+        if($(this).length > perPage) {
             var page = pagination($(this), perPage),
                 $next = $('.smpPagination--pagination.next'),
                 $prev = $('.smpPagination--pagination.prev') ;
